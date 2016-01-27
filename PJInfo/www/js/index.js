@@ -32,7 +32,7 @@ var app = {
 		document.addEventListener('menubutton', this.onMenuButton, false);
 		document.addEventListener('backbutton', this.onBackButton, false);
 
-		app.onDeviceReady();
+		//app.onDeviceReady();
     },
 	
     // deviceready Event Handler
@@ -67,6 +67,10 @@ var app = {
 		
 		if (localStorage.school == null) {
 			localStorage.school = "gymnasium";
+		}
+
+		if (localStorage.teacher == null) {
+			localStorage.teacher = "none";
 		}
 		
 		for (var i = 0; i < schools.length; i++) {
