@@ -32,7 +32,7 @@ var app = {
 		document.addEventListener('menubutton', this.onMenuButton, false);
 		document.addEventListener('backbutton', this.onBackButton, false);
 
-		//app.onDeviceReady();
+		//app.onDeviceReady();	// Manual overwrite for testing purposes
     },
 	
     // deviceready Event Handler
@@ -41,6 +41,8 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
 		
+		// Gets all HTML elements required for the rest of the code
+		// Calling on the document after IFrames are set causes problems, therefor they are saved to variables in advance
 		pages = { 
 			"roosterwijzigingen": document.getElementById('roosterwijzigingen'), 
 			"mededelingen": document.getElementById('mededelingen'), 
@@ -62,6 +64,7 @@ var app = {
 		teacherSelectGym = document.getElementById('teacherSelectGym');
 		teacherSelectMon = document.getElementById('teacherSelectMon');
 		
+		//Sets some default values for startup and first time use, when nothing is in the localStorage yet
 		currentPage = pages.roosterwijzigingen;
 		currentTab = tabs.roosterwijzigingen;
 		
@@ -89,6 +92,7 @@ var app = {
 			}
 		}
 		
+		// Loads the appropriate pages at startup
 		app.onSchoolSwitch();
 		
 	},
@@ -103,7 +107,9 @@ var app = {
 		switchPage(previousPage);
 	},
 	
-	// Required because loading the IFrame early causes problems with the javascript
+	// Changes the pages to be appropriate to the selected school
+	// The resetTeacher argument, when set to "true", will reset the selected teacher to avoid conflicts when switching schools
+	// resetTeacher doesn't get called when setting up IFrames for the first time after startup
 	onSchoolSwitch: function(resetTeacher) {
 		
 		switch(localStorage.school) {
@@ -173,6 +179,7 @@ var app = {
 		
 	},
 	
+	// Changes the "leraarrooster" page to match the selected teacher
 	onTeacherSwitch: function() {
 		if (localStorage.teacher != 'none') {
 			tabs.leraarrooster.classList.remove('hidden')
@@ -191,7 +198,7 @@ var app = {
 		}
 	},
 	
-	// Switch display of "page" divs
+	// Switches display of "page" divs
 	switchPage: function(page) {
 		
 		var pageToLoad = pages[page];

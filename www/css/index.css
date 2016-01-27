@@ -133,6 +133,10 @@ iframe {
 		font-size: 9px;
 	}
 	
+	select {
+		font-size: 9px;
+	}
+	
 	#banner {
 		font-size: 12px;
 	}
@@ -140,6 +144,10 @@ iframe {
 
 @media screen and (min-width:480px) {
 	body {
+		font-size: 14px;
+	}
+	
+	select {
 		font-size: 14px;
 	}
 	
@@ -153,6 +161,10 @@ iframe {
 		font-size: 15px;
 	}
 	
+	select {
+		font-size: 15px;
+	}
+	
 	#banner {
 		font-size: 20px;
 	}
@@ -160,6 +172,10 @@ iframe {
 
 @media screen and (min-width:695px) {
 	body {
+		font-size: 20px;
+	}
+	
+	select {
 		font-size: 20px;
 	}
 	
@@ -173,6 +189,10 @@ iframe {
 		font-size: 24px;
 	}
 	
+	select {
+		font-size: 24px;
+	}
+	
 	#banner {
 		font-size: 32px;
 	}
@@ -180,6 +200,10 @@ iframe {
 
 @media screen and (min-width:1015px) {
 	body {
+		font-size: 29px;
+	}
+	
+	select {
 		font-size: 29px;
 	}
 	
