@@ -31,65 +31,53 @@
         <title>PJ Info</title>
     </head>
     <body>
-	
         <!-- banner 1 -->
         <div id="banner">
             <h1>PJ Info</h1>
         </div>
-		
         <!-- banner 2 -->
         <div id="banner2">
-            <a class="tab selected" id="tab-roosterwijzigingen" onclick="app.switchPage('roosterwijzigingen');">
-				<h2>Roosterwijzigingen</h2>
-			</a>
-            <a class="tab" id="tab-mededelingen" onclick="app.switchPage('mededelingen');">
-				<h2>Mededelingen</h2>
-			</a>
+            <a class="tab selected" id="tab-roosterwijzigingen" onclick="app.switchPage('roosterwijzigingen');"><h2>Roosterwijzigingen</h2></a>
+            <a class="tab" id="tab-mededelingen" onclick="app.switchPage('mededelingen');"><h2>Mededelingen</h2></a>
         </div>
-		
         <!-- footer -->
         <div id="footer">
-            <a class="tab" id="tab-instellingen" onclick="app.switchPage('instellingen')">
-				<h2>Instellingen</h2>
-			</a>
-			<a class="tab sided" id="tab-leraarrooster" onclick="app.switchPage('leraarrooster'); app.onTeacherSwitch();">
-				<h2>Leraarrooster</h2>
-			</a>
+            <a class="tab" id="tab-instellingen" onclick="app.switchPage('instellingen')"><h2>Instellingen</h2></a>
+			<a class="tab sided" id="tab-leraarrooster" onclick="app.switchPage('leraarrooster'); app.onTeacherSwitch();"><h2>Leraarrooster</h2></a>
         </div>
-		
 		<!-- "page" divs met de verschillende paginas -->
+        <!-- roosterwijzigingen -->
 		<div class="page selected" id="roosterwijzigingen">
 			<p style="padding-top: 30%">Dit zijn de roosterwijzigingen</p>
 		</div>
-		
+		<!-- mededelingen -->
 		<div class="page" id="mededelingen">
 			<p style="padding-top: 30%">Dit zijn de mededelingen</p>
 		</div>
-		
+		<!-- leraarrooster -->
 		<div class="page" id="leraarrooster">
 			<p style="padding-top: 30%">Dit zijn de leraarroosters</p>
 		</div>
-		
+        <!-- instellingen -->
 		<div class="page" id="instellingen">
-			<div id="instellingen">
-			
-            <h2>Selecteer school</h2>
-				<select onchange="localStorage.school = this.value; app.onSchoolSwitch(true)">
-					<option class="school" value="gymnasium">Stedelijk Gymnasium Leeuwarden</option>
-					<option class="school" value="montessori">Montessori High School</option>
-					<option class="school" value="lyceum">Leeuwarder Lyceum</option>
-					<!-- option class="school" value="foorakker">De Foorakker</option -->
-					<option class="school" value="dedyk">De Dyk</option>
-					<option class="school" value="dokkum">Dalton Dokkum</option>
-				</select>
-				
-			<br />
-			<br />
-			<br />
-			<br />
-				
-			<h2 class="hidden" id="teacherSelect">Selecteer leraarrooster</h2>
-				<select class ="hidden" id="teacherSelectGym" onchange="localStorage.teacher = this.value; app.onTeacherSwitch()">
+            <div id="instellingen">
+                <!-- instellingen voor school -->
+                <h2>Selecteer school</h2>
+                <select onchange="localStorage.school = this.value; app.onSchoolSwitch(true)">
+                    <option class="school" value="gymnasium">Stedelijk Gymnasium Leeuwarden</option>
+                    <option class="school" value="montessori">Montessori High School</option>
+                    <option class="school" value="lyceum">Leeuwarder Lyceum</option>
+                    <!-- option class="school" value="foorakker">De Foorakker</option -->
+                    <option class="school" value="dedyk">De Dyk</option>
+                    <option class="school" value="dokkum">Dalton Dokkum</option>
+                </select>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <!-- instellingen voor school -->
+                <h2 class="hidden" id="teacherSelect">Selecteer leraarrooster</h2>
+                <select class ="hidden" id="teacherSelectGym" onchange="localStorage.teacher = this.value; app.onTeacherSwitch()">
 					<option class="teacher" value="none">(Geen)</option>
 					<option class="teacher" value="anm">Andringa</option>
 					<option class="teacher" value="bat">Barhorst</option>
@@ -144,7 +132,6 @@
 					<option class="teacher" value="wou">Van der Woude</option>
 					<option class="teacher" value="zdj">Van der Zee</option>
 				</select>
-				
 				<select class="hidden" id="teacherSelectMon" onchange="localStorage.teacher = this.value; app.onTeacherSwitch()">
 					<option class="teacher" value="none">(Geen)</option>
 					<option class="teacher" value="Ang">Ang</option>
@@ -180,10 +167,8 @@
 					<option class="teacher" value="Vrt">Vrt</option>
 					<option class="teacher" value="Ret">Ret</option>
 				</select>
-			
 			</div>
 		</div>
-		
         <!-- js bronnen -->
         <script type="text/javascript">
             app.initialize();
